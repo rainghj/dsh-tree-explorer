@@ -19,7 +19,7 @@ dsh plugin --profile web add dsh-tree-explorer
 dsh plugin --profile web add /path/to/dsh-tree-explorer
 
 # 或从 GitHub（会运行 prepare 构建，需按提示授权 allowBuilds）
-dsh plugin --profile web add github:you/dsh-tree-explorer#<commit-sha>
+dsh plugin --profile web add github:rainghj/dsh-tree-explorer#<commit-sha>
 
 # 或 tarball
 pnpm pack

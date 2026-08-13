@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "DeepSeek Harness plugin bundle: right-docked directory-tree panel (files + directories), model-facing tree tool, /tree slash command, and a host-side file/git JSON service.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainghj/dsh-tree-explorer.git"
+  },
   "type": "module",
   "main": "lib/index.js",
   "exports": {

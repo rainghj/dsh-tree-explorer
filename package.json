@@ -1,0 +1,46 @@
+{
+  "name": "dsh-tree-explorer",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness plugin bundle: right-docked directory-tree panel (files + directories), model-facing tree tool, /tree slash command, and a host-side file/git JSON service.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tree-fs": "./lib/tree-fs.js",
+    "./client": "./dist/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "src",
+    "cordis.patch.yml",
+    "build.mjs",
+    "verify-bundle.mjs",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "verify": "node build.mjs && node verify-bundle.mjs",
+    "prepare": "node build.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6",
+    "@phosphor-icons/core": "^2.1.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}

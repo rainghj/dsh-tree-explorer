@@ -1,0 +1,19 @@
+# dsh-tree-explorer bundle layer. Applied after the profile's other bundle
+# layers (dsh-base, dsh-web-app), so later layers can still override these rows.
+#
+# Installs two plugin entries:
+#   tree-panel    — sidebar footer button opening the right-docked directory
+#                   tree panel (browser half ships via `dsh.client`; the node
+#                   half is the Cordis stub in lib/index.js)
+#   tree-fs       — host-side file/git JSON service under /tree-fs/* (webServer routes)
+- insert:
+    - id: tree-panel
+      name: 'dsh-tree-explorer'
+
+    - id: tree-fs
+      name: 'dsh-tree-explorer/tree-fs'
+      config:
+        # Panel entry placement: 'sidebar-footer' (bottom of the sidebar, root
+        # scope — always visible) | 'header-utilities' (top-right of the
+        # session header — only visible with an active session) | 'hidden'.
+        entry: 'sidebar-footer'
